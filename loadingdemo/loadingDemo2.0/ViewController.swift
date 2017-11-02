@@ -18,8 +18,8 @@ class ViewController: UIViewController {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         YLoadingView.show()
         let  loadV =  YLoadingView.loadingView
-        loadV.isBuble = false
-        loadV.squareMargin = 0
+        loadV.squareMargin = 5
+        
     }
     
 }

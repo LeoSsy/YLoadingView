@@ -105,7 +105,7 @@ class YEatingView: UIView {
     /// - Parameter rect: 当前视图的frame
     override func draw(_ rect: CGRect) {
         super.draw(rect)
-        
+
         if isEating {
             //绘制吃的路径
             movieEatPath()
