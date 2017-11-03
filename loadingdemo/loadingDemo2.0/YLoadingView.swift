@@ -248,6 +248,8 @@ class YLoadingView: UIView {
             frames.append(frameInfo)
             //设置默认开始位置为右上角
             if row == 0 && col == cols-1 {
+                tempView.isHidden = true
+                self.lastView = tempView
                 startFrame = frame
                 startCol = Int(col)
                 startRow = row
@@ -302,7 +304,7 @@ class YLoadingView: UIView {
                 }
                 break
             }else if startRow < totalCols  && startCol == 0 { //在左边
-                animatedView.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi))
+                animatedView.transform = CGAffineTransform(rotationAngle: CGFloat(-Double.pi*0.5))
                 //计算下一个位置
                 nextRow = startRow+1
                 nextCol = startCol

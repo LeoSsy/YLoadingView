@@ -69,7 +69,7 @@ class YEatingView: UIView {
             setNeedsDisplay()
         }
     }
-    
+
     //里面圆的半径比总的当前视图尺寸小多少
     private var minusValue:CGFloat = 2 {
         didSet{
@@ -94,11 +94,55 @@ class YEatingView: UIView {
         cell.velocity = 50
         cell.emissionLatitude = CGFloat(90*Double.pi/180)
         cell.yAcceleration = -100
-        cell.emissionRange = CGFloat(180*Double.pi/180);
+        cell.emissionRange = CGFloat(180*Double.pi/180)
         emitterLayer.emitterCells = [cell]
         self.layer.addSublayer(emitterLayer)
         return emitterLayer
     }()
+    
+    /// 设置粒子图层展示cell的样式
+    ///
+    /// - Parameters:
+    ///   - birthRate: 一次产生多少个粒子对象
+    ///   - lifetime: 每个粒子对象的生命值
+    public func setEmitter(birthRate:Float,lifetime:Float){
+        emitterLayer?.renderMode = kCAEmitterLayerAdditive
+        if let superview = self.superview   {
+            emitterLayer?.frame = superview.frame
+        }
+        emitterLayer?.emitterPosition = CGPoint(x: bounds.size.width/2, y: bounds.size.height/2)
+        let cell = CAEmitterCell()
+        cell.contents =  createImage(color: UIColor.white.withAlphaComponent(0.45))?.cgImage
+        cell.birthRate = birthRate
+        cell.lifetime = lifetime
+        cell.velocity = 50
+        cell.velocityRange = 50
+        cell.alphaRange = -0.4
+        cell.yAcceleration = -100
+        cell.emissionRange = CGFloat(Double.pi*2)
+        emitterLayer?.emitterCells = [cell]
+    }
+
+    /// 重置粒子图层的显示
+    public func resentEmitter(){
+        emitterLayer?.birthRate = 2
+        emitterLayer?.renderMode = kCAEmitterLayerOldestLast
+        emitterLayer?.emitterMode = kCAEmitterLayerLine
+        emitterLayer?.emitterShape = kCAEmitterLayerLine
+        emitterLayer?.accessibilityPath = self.bubblePath()
+        
+        let cell = CAEmitterCell()
+        cell.contents =  createImage(color: UIColor.white.withAlphaComponent(0.45))?.cgImage
+        cell.birthRate = 2
+        cell.lifetime = 0.5
+        cell.velocity = 50
+        cell.emissionLatitude = CGFloat(90*Double.pi/180)
+        cell.yAcceleration = -100
+        cell.emissionRange = CGFloat(180*Double.pi/180)
+        emitterLayer?.emitterCells = [cell]
+        self.layer.addSublayer(emitterLayer!)
+    }
+    
     
     /// 绘制方法 系统自动调用
     ///
@@ -131,8 +175,8 @@ class YEatingView: UIView {
         path1.stroke()
         
         //添加粒子效果
-        emitterLayer?.birthRate = 2
-        
+        emitterLayer?.renderMode = kCAEmitterLayerOldestLast
+
     }
     
     /// 移动视图默认的路径
@@ -178,7 +222,6 @@ class YEatingView: UIView {
         path1.stroke()
     }
     
-    
     /// 绘制吐泡泡的路径
     func bubblePath()->UIBezierPath {
         UIGraphicsBeginImageContext(self.bounds.size)
@@ -193,7 +236,7 @@ class YEatingView: UIView {
         UIGraphicsEndImageContext()
         return path1
     }
-    
+
     /// 通过颜色创建一张图片
     func createImage(color: UIColor) -> UIImage? {
         let rect = CGRect(x: 0.0, y: 0, width: 5.0, height: 5.0)

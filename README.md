@@ -4,9 +4,20 @@
 
 示例程序：
 
-![MacDown Screenshot](./yloading.gif)
+###### 默认 YLoadingView 类显示效果如下
+
+![MacDown Screenshot](./yloading1.gif)
+
+
+###### YLoadingEatingView 类显示效果如下
+![MacDown Screenshot](./yloading2.gif)
+
 
 因为集成到项目中很多地方用到，我这里直接创建的单粒
+提示： 为了在项目使用中不用太依赖其他文件 所以这里YLoadingEatingView是单独重新写的，所以你会看到很多重复的代码，如果你需要在项目中使用
+YLoadingView 或者 YLoadingEatingView 只需要将对应的文件导入到项目中即可
+
+另外：YEatingView 这个类 就是那个移动的嘴巴视图 是两个样式都需要的
 
 使用方式：
 
@@ -14,6 +25,7 @@
 
 ```objc
   YLoadingView.show()
+  YLoadingEatingView()
 ```
 #### 2.根据需要配置显示的外观
 ``` objc
@@ -23,6 +35,7 @@
 		loadV.isBuble = false //设置不要吐泡泡
 		loadV.squareMargin = 8 //设置每个方块之间的间距为8
 		loadV.cols = 4 //设置总行数 列数和行数一样 为了美观我这里直接设置为行数和列数一致
+ YLoadingEatingView 类使用方法类似
 
 ```
 

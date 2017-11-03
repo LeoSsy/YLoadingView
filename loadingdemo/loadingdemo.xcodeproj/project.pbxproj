@@ -20,6 +20,9 @@
 		2A20DF411FA9A6430014D9FA /* YEatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A20DF401FA9A6430014D9FA /* YEatingView.swift */; };
 		2A20DF421FA9A6430014D9FA /* YEatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A20DF401FA9A6430014D9FA /* YEatingView.swift */; };
 		2A20DF431FA9A6430014D9FA /* YEatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A20DF401FA9A6430014D9FA /* YEatingView.swift */; };
+		2AAF177B1FAAFB3000FB0676 /* YLoadingEatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAF177A1FAAFB3000FB0676 /* YLoadingEatingView.swift */; };
+		2AAF177C1FAAFB3000FB0676 /* YLoadingEatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAF177A1FAAFB3000FB0676 /* YLoadingEatingView.swift */; };
+		2AAF177D1FAAFB3000FB0676 /* YLoadingEatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAF177A1FAAFB3000FB0676 /* YLoadingEatingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +59,7 @@
 		2A20DF3C1FA9A6330014D9FA /* YLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YLoadingView.swift; sourceTree = "<group>"; };
 		2A20DF401FA9A6430014D9FA /* YEatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YEatingView.swift; sourceTree = "<group>"; };
 		2A47ED8D1FA978350023C0A2 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		2AAF177A1FAAFB3000FB0676 /* YLoadingEatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YLoadingEatingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +92,7 @@
 			children = (
 				2A20DF101FA9A5940014D9FA /* AppDelegate.swift */,
 				2A20DF3C1FA9A6330014D9FA /* YLoadingView.swift */,
+				2AAF177A1FAAFB3000FB0676 /* YLoadingEatingView.swift */,
 				2A20DF401FA9A6430014D9FA /* YEatingView.swift */,
 				2A20DF121FA9A5940014D9FA /* ViewController.swift */,
 				2A20DF141FA9A5940014D9FA /* Main.storyboard */,
@@ -282,6 +287,7 @@
 				2A20DF411FA9A6430014D9FA /* YEatingView.swift in Sources */,
 				2A20DF3D1FA9A6330014D9FA /* YLoadingView.swift in Sources */,
 				2A20DF131FA9A5940014D9FA /* ViewController.swift in Sources */,
+				2AAF177B1FAAFB3000FB0676 /* YLoadingEatingView.swift in Sources */,
 				2A20DF111FA9A5940014D9FA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -293,6 +299,7 @@
 				2A20DF261FA9A5940014D9FA /* loadingDemo2_0Tests.swift in Sources */,
 				2A20DF421FA9A6430014D9FA /* YEatingView.swift in Sources */,
 				2A20DF3E1FA9A6330014D9FA /* YLoadingView.swift in Sources */,
+				2AAF177C1FAAFB3000FB0676 /* YLoadingEatingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,6 +310,7 @@
 				2A20DF311FA9A5940014D9FA /* loadingDemo2_0UITests.swift in Sources */,
 				2A20DF431FA9A6430014D9FA /* YEatingView.swift in Sources */,
 				2A20DF3F1FA9A6330014D9FA /* YLoadingView.swift in Sources */,
+				2AAF177D1FAAFB3000FB0676 /* YLoadingEatingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

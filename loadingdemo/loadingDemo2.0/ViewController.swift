@@ -16,9 +16,10 @@ class ViewController: UIViewController {
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        YLoadingView.show()
-        let  loadV =  YLoadingView.loadingView
-        loadV.squareMargin = 5
+        YLoadingEatingView.show()
+        let  loadV =  YLoadingEatingView.loadingView
+        loadV.squareMargin = 2
+        loadV.cols = 5
         
     }
     
